@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyanotype Slams</title>
+  <style>
+    /* General styling */
+    body {
+      background-color: #d8f3dc; /* Light green background */
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px; /* Add spacing around content */
+      box-sizing: border-box; /* Include padding in width/height calculations */
+    }
+
+    h1 {
+      color: #2d6a4f;
+    }
+
+    p {
+      color: #2d6a4f;
+      font-size: 1.2em;
+      margin: 0 auto 20px; /* Add spacing at the bottom */
+      max-width: 600px; /* Restrict text block width */
+      text-align: justify; /* Nice alignment */
+      line-height: 1.6; /* Improve readability */
+    }
+
+    /* Logo styling */
+    .logo-container {
+      text-align: center;
+      margin-top: 20px; /* Add space above the logo */
+    }
+
+    .logo {
+      width: 150px; /* Adjust for smaller screens */
+      height: auto; /* Maintain aspect ratio */
+      position: static; /* Ensure no overlap */
+    }
+
+    /* Button styles */
+    .audio-button {
+      display: inline-block;
+      margin: 20px;
+      cursor: pointer;
+    }
+
+    .audio-button img {
+      width: 200px;
+      height: 200px;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .audio-button img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Hidden content area */
+    .content {
+      display: none;
+      margin-top: 30px;
+    }
+
+    .content img {
+      width: 200px;
+      height: 200px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      margin-top: 20px;
+    }
+
+    .back-button {
+      background-color: #2d6a4f;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .back-button:hover {
+      background-color: #40916c;
+    }
+
+    /* Responsive styles for mobile */
+    @media (max-width: 600px) {
+      .logo {
+        width: 120px; /* Further reduce size for small screens */
+      }
+
+      h1 {
+        font-size: 1.5em; /* Adjust title size */
+      }
+
+      .audio-button img {
+        width: 150px; /* Reduce button size */
+        height: 150px;
+      }
+
+      p {
+        font-size: 1em; /* Adjust text size */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="logo.png" alt="Logo" class="logo">
+  </div>
+
+  <!-- Main content -->
+  <h1 id="main-title">BioART Poetry Slams</h1>
+  <div id="main-screen">
+    <!-- Audio buttons -->
+    <div class="audio-button" onclick="showContent(1)">
+      <img src="button1.jpg" alt="Audio 1">
+    </div>
+    <div class="audio-button" onclick="showContent(2)">
+      <img src="button2.jpg" alt="Audio 2">
+    </div>
+    <p id="main-text">These slams are born from my recent travels across Asia and the ebb and flow of life itself. It's my first time diving into something like this, so I'd love to hear your thoughts, feedback, or just some kind words. Enjoyyyyy! :)))))</p>
+  </div>
+
+  <!-- Content areas -->
+  <div id="content1" class="content">
+    <img src="button1.jpg" alt="Audio 1 Image">
+    <audio id="audio1" src="audio1.m4a" controls></audio>
+    <p><strong>Yurt district Ulaanbaatar, Mongolia - 25/07/2024.</strong><br>
+[note 22/11]: the slam is not published yet. Instead you'll hear some Mongolian singing for now.<br>
+This slam is called *"Verweven Leven"* and it’s all about the deep bond between the Mongolian people and the land. Inspired by a ritual I witnessed, where a yurt is cleansed and ancestors are honored, it’s a tribute to the rhythm of nature and the connections we share with those who came before us. I hope it resonates with you in some way.</p>
+    <button class="back-button" onclick="goBack()">Back</button>
+  </div>
+
+  <div id="content2" class="content">
+    <img src="button2.jpg" alt="Audio 2 Image">
+    <audio id="audio2" src="audio2.m4a" controls></audio>
+    <p><strong>Random art gallery - Kazan, Russia - 24/08/2024.</strong><br>
+[note 22/11]: the slam is not published yet. Instead you'll hear some Mongolian singing for now.<br>
+On the cyanotype, you’ll find the phrase <em>"Это прощание, да?"</em>, which translates from Russian to <em>"This is goodbye, right?"</em>. It’s also the title of the slam, a reflection on the things I’m ready to say farewell to.</p>
+    <button class="back-button" onclick="goBack()">Back</button>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    let currentAudio = null;
+
+    function showContent(buttonNumber) {
+      // Hide main screen content
+      document.getElementById('main-screen').style.display = 'none';
+      document.getElementById('main-title').style.display = 'none';
+      document.getElementById('main-text').style.display = 'none';
+
+      // Show the specific content
+      const content = document.getElementById(`content${buttonNumber}`);
+      content.style.display = 'block';
+
+      // Play corresponding audio
+      currentAudio = document.getElementById(`audio${buttonNumber}`);
+      currentAudio.play();
+    }
+
+    function goBack() {
+      // Stop any playing audio
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+      }
+
+      // Hide all content and show main screen
+      document.getElementById('main-screen').style.display = 'block';
+      document.getElementById('main-title').style.display = 'block';
+      document.getElementById('main-text').style.display = 'block';
+
+      document.querySelectorAll('.content').forEach(content => {
+        content.style.display = 'none';
+      });
+
+      // Reset current audio
+      currentAudio = null;
+    }
+  </script>
+</body>
+</html>
