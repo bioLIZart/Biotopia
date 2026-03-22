@@ -5,43 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Design to Decay</title>
   <style>
-    /* General styling */
     body {
-      background-color: #d8f3dc; /* Light green background */
+      background-color: #d8f3dc;
       font-family: Arial, sans-serif;
       text-align: center;
       margin: 0;
-      padding: 20px; /* Add spacing around content */
-      box-sizing: border-box; /* Include padding in width/height calculations */
+      padding: 20px;
+      box-sizing: border-box;
     }
 
-    h1 {
-      color: #2d6a4f;
-    }
+    h1 { color: #2d6a4f; }
 
     p {
       color: #2d6a4f;
       font-size: 1.2em;
-      margin: 0 auto 20px; /* Add spacing at the bottom */
-      max-width: 600px; /* Restrict text block width */
-      text-align: justify; /* Nice alignment */
-      line-height: 1.6; /* Improve readability */
+      margin: 0 auto 20px;
+      max-width: 600px;
+      text-align: justify;
+      line-height: 1.6;
     }
 
-    /* Logo styling */
-    .logo-container {
-      text-align: center;
-      margin-top: 20px; /* Add space above the logo */
-    }
+    .logo-container { margin-top: 20px; }
+    .logo { width: 150px; height: auto; }
 
-    .logo {
-      width: 150px; /* Adjust for smaller screens */
-      height: auto; /* Maintain aspect ratio */
-      position: static; /* Ensure no overlap */
-    }
-
-    /* Button styles 1 */
-    .audio-button {
+    .audio-button, .audio-button2 {
       display: inline-block;
       margin: 20px;
       cursor: pointer;
@@ -51,52 +38,35 @@
       width: 300px;
       height: 250px;
       border-radius: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
       transition: transform 0.3s ease;
-    }
-
-    .audio-button img:hover {
-      transform: scale(1.05);
-    }
-    
-/* Button styles 2 */
-    .audio-button2 {
-      display: inline-block;
-      margin: 20px;
-      cursor: pointer;
     }
 
     .audio-button2 img {
       width: 200px;
       height: 300px;
       border-radius: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
       transition: transform 0.3s ease;
     }
 
+    .audio-button img:hover,
     .audio-button2 img:hover {
       transform: scale(1.05);
     }
 
-    /* Hidden content area */
     .content {
       display: none;
       margin-top: 30px;
     }
 
     .content img {
-      width: 200px;
-      height: 200px;
+      width: 300px;
+      height: 250px;
       border-radius: 20px;
       margin-bottom: 20px;
     }
-    
-    .content p {
-      margin-top: 20px;
-    }
-    
 
-    
     .back-button {
       background-color: #2d6a4f;
       color: white;
@@ -108,125 +78,103 @@
       margin-top: 20px;
     }
 
-    .back-button:hover {
-      background-color: #40916c;
-    }
+    .back-button:hover { background-color: #40916c; }
 
-    /* Responsive styles for mobile */
     @media (max-width: 600px) {
-      .logo {
-        width: 120px; /* Further reduce size for small screens */
-      }
-
-      h1 {
-        font-size: 1.5em; /* Adjust title size */
-      }
-
-      .audio-button img {
-        width: 200px; /* Reduce button size */
-        height: 150px;
-      }
-      .audio-button2 img {
-        width: 150px; /* Reduce button size */
-        height: 200px;
-      }
-
-      p {
-        font-size: 1em; /* Adjust text size */
-      }
+      .logo { width: 120px; }
+      h1 { font-size: 1.5em; }
+      .audio-button img { width: 200px; height: 150px; }
+      .audio-button2 img { width: 150px; height: 200px; }
+      p { font-size: 1em; }
     }
   </style>
 </head>
 <body>
-  <!-- Logo -->
+
   <div class="logo-container">
     <img src="logo.png" alt="Logo" class="logo">
   </div>
 
-  <!-- Main content -->
   <h1 id="main-title">Biotopia - Design to Decay</h1>
-    <p id="main-text">Welcome to the expo Design to Decay!<br>
-      <br>
-      Poetry can feel different when preformed, read or listen to. That's exactly what you can do via this website. Click on one of the images to hear the audio. <br> 
-      <br>
-      If you like to respond to one of the pieces/poems you can do so via email: deplaelisaeth@gmail.com, leave a lettre or send one to Pekelharing 43, 9000 Gent. <br>
-      <br>
-      Enjoy <333 </p>
+
+  <p id="main-text">
+    Welcome to the expo Design to Decay!<br>
+    <br>
+    Poetry can feel different when performed, read or listened to. Click on one of the images to hear the audio.<br>
+    <br>
+    If you like to respond to one of the pieces/poems you can do so via email: deplaelisaeth@gmail.com, leave a letter or send one to Pekelharing 43, 9000 Gent.<br>
+    <br>
+    Enjoy <333
+  </p>
+
   <div id="main-screen">
-    <!-- Audio buttons -->
     <div class="audio-button" onclick="showContent(1)">
-      <img src="att.HAe2e2Kn3MOSR339EOlWtiz7OGpuLSpLTYuKXVh3vxo.jpeg" alt="Audio 1">
+      <img src="att.HAe2e2Kn3MOSR339EOlWtiz7OGpuLSpLTYuKXVh3vxo.jpeg">
     </div>
+
     <div class="audio-button2" onclick="showContent(2)">
-      <img src="att.tM5jjsqmlaVl7E9DiYEtFevg2A5rv5wGP3cwhwXOXUk.jpeg" alt="Audio 2">
+      <img src="att.tM5jjsqmlaVl7E9DiYEtFevg2A5rv5wGP3cwhwXOXUk.jpeg">
     </div>
-     <div class="audio-button" onclick="showContent(3)">
-      <img src="att.QTOkm132KNoY9UQqshDW_An1oZCZjhq-kMhf8kXTJs4.jpeg" alt="Audio 3">
+
+    <div class="audio-button" onclick="showContent(3)">
+      <img src="att.QTOkm132KNoY9UQqshDW_An1oZCZjhq-kMhf8kXTJs4.jpeg">
     </div>
-  
+  </div>
 
-
-  <!-- Content areas -->
+  <!-- CONTENT 1 -->
   <div id="content1" class="content">
-    <img src="att.HAe2e2Kn3MOSR339EOlWtiz7OGpuLSpLTYuKXVh3vxo.jpeg" alt="Audio 1 Image">
+    <img src="att.HAe2e2Kn3MOSR339EOlWtiz7OGpuLSpLTYuKXVh3vxo.jpeg">
     <audio id="audio1" src="Bloemen gekregen.m4a" controls></audio>
-    <p><strong>BLOEMEN gekregen </strong><br>
+    <p><strong>BLOEMEN gekregen</strong></p>
     <button class="back-button" onclick="goBack()">Back</button>
   </div>
 
+  <!-- CONTENT 2 -->
   <div id="content2" class="content">
-    <img src="att.tM5jjsqmlaVl7E9DiYEtFevg2A5rv5wGP3cwhwXOXUk.jpeg" alt="Audio 2 Image">
+    <img src="att.tM5jjsqmlaVl7E9DiYEtFevg2A5rv5wGP3cwhwXOXUk.jpeg">
     <audio id="audio2" src="Ondraagbaar.m4a" controls></audio>
-    <p><strong>Ondraagbaar</strong><br>
-    <button class="back-button" onclick="goBack()">Back</button>
-  </div>
-    
-  <div id="content3" class="content">
-    <img src="att.QTOkm132KNoY9UQqshDW_An1oZCZjhq-kMhf8kXTJs4.jpeg" alt="Audio 3 Image">
-    <audio id="audio1" src="Full circle in a square.m4a" controls></audio>
-    <p><strong>Full Circle in a Square</strong><br>
+    <p><strong>Ondraagbaar</strong></p>
     <button class="back-button" onclick="goBack()">Back</button>
   </div>
 
-  
-  <!-- JavaScript -->
+  <!-- CONTENT 3 -->
+  <div id="content3" class="content">
+    <img src="att.QTOkm132KNoY9UQqshDW_An1oZCZjhq-kMhf8kXTJs4.jpeg">
+    <audio id="audio3" src="Full circle in a square.m4a" controls></audio>
+    <p><strong>Full Circle in a Square</strong></p>
+    <button class="back-button" onclick="goBack()">Back</button>
+  </div>
+
   <script>
     let currentAudio = null;
 
     function showContent(buttonNumber) {
-      // Hide main screen content
       document.getElementById('main-screen').style.display = 'none';
       document.getElementById('main-title').style.display = 'none';
       document.getElementById('main-text').style.display = 'none';
 
-      // Show the specific content
       const content = document.getElementById(`content${buttonNumber}`);
       content.style.display = 'block';
 
-      // Play corresponding audio
       currentAudio = document.getElementById(`audio${buttonNumber}`);
       currentAudio.play();
     }
 
     function goBack() {
-      // Stop any playing audio
       if (currentAudio) {
         currentAudio.pause();
         currentAudio.currentTime = 0;
       }
 
-      // Hide all content and show main screen
       document.getElementById('main-screen').style.display = 'block';
       document.getElementById('main-title').style.display = 'block';
       document.getElementById('main-text').style.display = 'block';
 
-      document.querySelectorAll('.content').forEach(content => {
-        content.style.display = 'none';
-      });
+      document.querySelectorAll('.content').forEach(c => c.style.display = 'none');
 
-      // Reset current audio
       currentAudio = null;
     }
   </script>
+
 </body>
 </html>
